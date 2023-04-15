@@ -11,7 +11,11 @@
     <button onclick="check()">確認</button>
     <script>
         function check() {
-            let array = document.querySelector("input").value.match(/.{2}/g).map(Number);
+            let array = [];
+            for (let i = 0; i < document.querySelector("input").value.length; i+=3) {
+                array.push(document.querySelector("input").value.slice(i, i+3));
+            }
+            array.map(Number);
             let numberArray = [...Array(34)].map((_, i) => i);
             numberArray.shift();
             let duplicatedArr = numberArray.filter(x => !array.includes(x))
