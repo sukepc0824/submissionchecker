@@ -12,13 +12,15 @@
     <script>
         function check() {
             let array = [];
-            for (let i = 0; i < document.querySelector("input").value.length; i+=3) {
-                array.push(document.querySelector("input").value.slice(i, i+3));
+            for (let i = 0; i < document.querySelector("input").value.length; i+=2) {
+                array.map(Number);
+                array.push(document.querySelector("input").value.slice(i, i+2));
             }
-            array.map(Number);
+            let arrayNum = array.map(Number);
+
             let numberArray = [...Array(34)].map((_, i) => i);
             numberArray.shift();
-            let duplicatedArr = numberArray.filter(x => !array.includes(x))
+            let duplicatedArr = numberArray.filter(x => !arrayNum.includes(x))
             alert(duplicatedArr)
         }
     </script>
