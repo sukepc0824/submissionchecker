@@ -12,9 +12,9 @@
     <script>
         function check() {
             let array = [];
-            for (let i = 0; i < document.querySelector("input").value.length; i+=2) {
+            for (let i = 0; i < document.querySelector("textarea").value.length; i+=2) {
                 array.map(Number);
-                array.push(document.querySelector("input").value.slice(i, i+2));
+                array.push(document.querySelector("textarea").value.slice(i, i+2));
             }
             let arrayNum = array.map(Number);
 
