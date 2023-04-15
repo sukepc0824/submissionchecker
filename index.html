@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>提出物調査</title>
+</head>
+
+<body>
+    <input type="number" style="width: 94%; font-size: 16px;">
+    <button onclick="check()">確認</button>
+    <script>
+        function check() {
+            let array = document.querySelector("input").value.match(/.{2}/g).map(Number);
+            let numberArray = [...Array(34)].map((_, i) => i);
+            numberArray.shift();
+            let duplicatedArr = numberArray.filter(x => !array.includes(x))
+            alert(duplicatedArr)
+        }
+    </script>
+</body>
+
+</html>
