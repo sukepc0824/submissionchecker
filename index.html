@@ -13,6 +13,7 @@
     <style>
         body {
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
         }
@@ -77,6 +78,7 @@
             font-size: 15pt;
         }
     </style>
+    <h1>週末課題提出率調査</h1>
     <form
         action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSekc1RAb6MhoJWBMBnK08twGu7S3Cch3DPq8l7Jfwa13E5U6A/formResponse"
         method="post">
@@ -121,7 +123,7 @@
             <label>備考</label>
             <input type="text" name="entry.363910804">
         </div>
-        <button type='submit'>送信</button>
+        <button type='submit' style="width: fit-content; padding: 6px; min-width: 120px; margin-top: 12px;">送信</button>
     </form>
     <script>
         $(function () {
