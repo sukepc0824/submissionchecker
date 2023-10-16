@@ -72,6 +72,10 @@
             height: 100%;
             padding: 12px;
         }
+
+        button {
+            font-size: 15pt;
+        }
     </style>
     <form
         action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSekc1RAb6MhoJWBMBnK08twGu7S3Cch3DPq8l7Jfwa13E5U6A/formResponse"
@@ -118,15 +122,15 @@
             <input type="text" name="entry.363910804">
         </div>
         <button type='submit'>送信</button>
-        <script>
-            $(function () {
-                $("input").keyup(function () {
-                    $("p").text(Math.floor(Number($("input.a").val()) / (
-                        Number($("input.a").val()) + Number($("input.b").val())) * 100)+"%")
-                })
-            })
-        </script>
     </form>
+    <script>
+        $(function () {
+            $("input").keyup(function () {
+                $("p").text(Math.floor(Number($("input.a").val()) / (
+                    Number($("input.a").val()) + Number($("input.b").val())) * 100) + "%")
+            })
+        })
+    </script>
 </body>
 
 </html>
