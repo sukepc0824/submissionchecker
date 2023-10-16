@@ -5,37 +5,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>文化委員週末課題提出率コンクール</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 
 <body style="font-size: 15pt;">
     <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        p {
+            font-size: 30pt;
+        }
+
         form {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
+            font-family: sans-serif;
+            text-align: center;
         }
 
         .input-object {
-            width: 360px;
+            width: 460px;
             height: 50px;
             background-color: #f6f6f6;
             display: flex;
             flex-direction: column;
             border-radius: 10px;
             position: relative;
+            padding: 5px;
             padding-top: 44px;
         }
 
 
-        .input-object label {
+        .input-object label,
+        .input-object-half label {
             font-size: 10pt;
             margin: 10px;
             position: absolute;
             top: 5px;
             left: 5px;
+            font-family: sans-serif;
         }
 
-        select,input {
+        .input-object-half {
+            width: 220px;
+            height: 50px;
+            background-color: #f6f6f6;
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            position: relative;
+            padding: 5px;
+            padding-top: 44px;
+        }
+
+        select,
+        input {
             font-size: 15pt;
             border: none;
             background: none;
@@ -56,22 +86,45 @@
                 <option value="1年5組">1年5組</option>
                 <hr>
                 <option value="2年1組">2年1組</option>
-             </select>
+                <option value="2年2組">2年2組</option>
+                <option value="2年3組">2年3組</option>
+                <option value="2年4組">2年4組</option>
+                <hr>
+                <option value="3年1組">3年1組</option>
+                <option value="3年2組">3年2組</option>
+                <option value="3年3組">3年3組</option>
+                <option value="3年4組">3年4組</option>
+            </select>
         </div>
+        <div style="display: flex;
+                    display: flex;
+            gap: 10px;">
+            <div class="input-object-half">
+                <label>
+                    提出した人数
+                </label>
+                <input type="number" class="a" name="entry.1530213213">
+            </div>
+            <div class="input-object-half">
+                <label>
+                    提出忘れ人数
+                </label>
+                <input type="number" class="b" name="entry.1822863913">
+            </div>
+        </div>
+        <p>0%</p>
         <div class="input-object">
-            <label>
-                提出
-            </label>
-            <input type="number">
+            <label>備考</label>
+            <input type="text" name="entry.363910804">
         </div>
-        <div class="input-object">
-            <label>
-                提出忘れ
-            </label>
-            <input type="number">
-        </div>
+        <button type='submit'>送信</button>
         <script>
-
+            $(function () {
+                $("input").keyup(function () {
+                    $("p").text(Math.floor(Number($("input.a").val()) / (
+                        Number($("input.a").val()) + Number($("input.b").val())) * 100)+"%")
+                })
+            })
         </script>
     </form>
 </body>
