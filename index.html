@@ -16,22 +16,31 @@
         }
 
         .input-object {
-            width: 300px;
+            width: 360px;
+            height: 50px;
             background-color: #f6f6f6;
             display: flex;
             flex-direction: column;
             border-radius: 10px;
+            position: relative;
+            padding-top: 44px;
         }
+
 
         .input-object label {
             font-size: 10pt;
             margin: 10px;
+            position: absolute;
+            top: 5px;
+            left: 5px;
         }
 
         select,input {
             font-size: 15pt;
             border: none;
             background: none;
+            height: 100%;
+            padding: 12px;
         }
     </style>
     <form
@@ -47,15 +56,7 @@
                 <option value="1年5組">1年5組</option>
                 <hr>
                 <option value="2年1組">2年1組</option>
-                <option value="2年2組">2年2組</option>
-                <option value="2年3組">2年3組</option>
-                <option value="2年4組">2年4組</option>
-                <hr>
-                <option value="3年1組">3年1組</option>
-                <option value="3年2組">3年2組</option>
-                <option value="3年3組">3年3組</option>
-                <option value="3年4組">3年4組</option>
-            </select>
+             </select>
         </div>
         <div class="input-object">
             <label>
