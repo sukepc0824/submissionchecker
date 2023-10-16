@@ -83,12 +83,12 @@
     <header style="border-bottom: 1px solid #ddd; margin-bottom: 30px; width: 100%;">
         <h1 style="font-size: 16pt; margin: 6px; font-weight: 500; text-align: center;">週末課題提出率調査</h1>
     </header>
-    <form
+    <form target="hidden_iframe" onsubmit="submitted=true;"
         action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSekc1RAb6MhoJWBMBnK08twGu7S3Cch3DPq8l7Jfwa13E5U6A/formResponse"
         method="post">
         <div class="input-object">
             <label>学年・組</label>
-            <select name="entry.834308718">
+            <select name="entry.834308718" required>
                 <option value="1年1組">1年1組</option>
                 <option value="1年2組">1年2組</option>
                 <option value="1年3組">1年3組</option>
@@ -113,13 +113,13 @@
                 <label>
                     提出した人数
                 </label>
-                <input type="number" class="a" name="entry.1530213213">
+                <input type="number" class="a" name="entry.1530213213" required>
             </div>
             <div class="input-object-half">
                 <label>
                     提出忘れ人数
                 </label>
-                <input type="number" class="b" name="entry.1822863913">
+                <input type="number" class="b" name="entry.1822863913" required>
             </div>
         </div>
         <div class="input-object">
@@ -132,6 +132,8 @@
                 style="width: fit-content; padding: 6px; min-width: 120px;">送信</button>
         </div>
     </form>
+    <script>let submitted = false;</script>
+<iframe name="hidden_iframe" style="display:none;" onload="if(submitted){window.location='thanks.html';}"></iframe>
     <script>
         $(function () {
             $("input").keyup(function () {
